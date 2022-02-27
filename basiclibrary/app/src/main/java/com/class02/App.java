@@ -3,7 +3,8 @@
  */
 package com.class02;
 
-import java.util.Random;
+
+import java.util.*;
 
 public class App {
     public static void main(String[] args) {
@@ -20,6 +21,21 @@ public class App {
         int avg = calculateAverage(testArr);
         int[] arrayOfAvg = avgArrOfArr(weeklyMonthTemperatures);
 
+
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
+        System.out.println(wetherAnalyzer(weeklyMonthTemperatures));
 
     }
 
@@ -64,5 +80,38 @@ public class App {
             newArr[index] = calculateAverage(arr[index]);
         }
         return newArr;
+    }
+
+    public static String wetherAnalyzer(int[][] weeklyMonthTemperatures){
+        Set<Integer> weeklyMonthTemperature = new HashSet<>();
+        for (int[] temperatures:
+                weeklyMonthTemperatures) {
+            for (int temperature : temperatures) {
+                weeklyMonthTemperature.add(temperature);
+            }
+        }
+        int high = Collections.max(weeklyMonthTemperature);
+        int low = Collections.min(weeklyMonthTemperature) ;
+        String notIncTemp =  "High: " + high + "\nLow: " + low +"\n";
+        for( ; low < high ; low++){
+            if(!weeklyMonthTemperature.contains(low)) notIncTemp += "Never saw temperature: " + low + "\n";
+        }
+        return notIncTemp;
+    }
+
+
+
+    public static String tally(List<String> list){
+        Map<String ,Integer> map = new HashMap<>();
+
+        for(  String ele  : list) {
+            if(  map.containsKey(ele)   ) {
+                map.put(ele, map.get(ele) + 1);
+            }//if
+            else {
+                map.put(ele, 1);
+            }
+        }//for
+        return Collections.max(map.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 }

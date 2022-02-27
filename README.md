@@ -59,3 +59,14 @@ A method that accepts an array of integers and calculates and returns the averag
 
 ### Arrays of Arrays
 A method that accepts an two diminition array then calculate the average value for each array and return the array with the lowest average.
+
+### Tallying Election
+A method that accepts a List of Strings representing votes and returns one string to show what got the most votes.
+
+### Analyzing Weather Data
+A method that accepts an two diminition array as parmeter for hole month divided into week then find the min and max values Using a HashSet of type Integer then iterate from the min temp to the max temp and create a String containing any temperature not seen during the month.
+
+## Linter
+### File I/O
+
+A method that reads a JavaScript file with a given Path, and generates an error message whenever it finds a line that doesn’t end in a semi-colon.
