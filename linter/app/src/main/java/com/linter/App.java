@@ -17,6 +17,11 @@ public class App {
         String path = String.valueOf(FileSystems.getDefault().getPath(System.getProperty("user.dir"), "app/src/main/resources/gates.js"));
         int errLineNumber = fileReader(path);
         System.err.println("Line "+ errLineNumber + ": Missing semicolon.");
+
+        int arr[] = {10,20,30,40,50};
+        int num = 30;
+        int last=arr.length-1;
+        binarySearch(arr,num);
     }
 
     public static int fileReader(String path){
@@ -41,6 +46,22 @@ public class App {
             e.printStackTrace();
         }
         return counter ;
+    }
+    public static int binarySearch(int[] arr ,int num){
+        int index = 0 ;
+        int len = arr.length-1;
+        int mid = (index+len)/2 ;
+        while (index <= len){
+            if ( arr[mid] < num ){
+                index = mid + 1;
+            }else if ( arr[mid] == index ){
+                break;
+            }else{
+                len = mid - 1;
+            }
+            mid = (index + len)/2;
+        }
+        return mid;
     }
 
 }
