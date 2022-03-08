@@ -5,15 +5,32 @@ package com.heritance;
 
 public class Library {
     public static void main(String[] args) {
-    Restaurant numberOne = new Restaurant("numberOne" , 5 , "$$");
-        Review review1 = new Review("This is good resturant" , "hamzh" , 5);
-        Review review2 = new Review("This is bad resturant" , "ahmad" , 1);
-        Review review3 = new Review("This is good resturant" , "mohammed" , 1);
-        numberOne.addReview(review1);
-        System.out.println(numberOne);
-        numberOne.addReview(review2);
-        System.out.println(numberOne);
-        numberOne.addReview(review3);
-        System.out.println(numberOne);
+
+
+
+        // Add Review instance
+        Review moviesReview = new Review("This is bad action movies" , "ahmad" , 3);
+        moviesReview.setMovieName("Spider-man");
+        Review resurantReview = new Review("This is good resturant" , "mohammed" , 1);
+        Review shopReview = new Review("This is a great shop" ,"hamzh" ,  1 );
+
+        // Theater instance
+        Theater theater = new Theater("number1" , 5 );
+        theater.addMovie("Spider-man");
+        theater.addMovie("Batman");
+        theater.addMovie("Super-man");
+        theater.addReview(moviesReview);
+        System.out.println("Theater ======== > "  + theater);
+
+        // Resturant instance
+        Restaurant restaurant = new Restaurant("Number1" , 5 , "$$");
+        restaurant.addReview(resurantReview);
+        System.out.println("Resturant ======== > "  + restaurant);
+
+        // Shop instance
+        Shop shop = new Shop("ecommerce" , 5 , "$$$" , "This is perfect shop");
+        shop.addReview(shopReview);
+        System.out.println("Shop ======== > " + shop);
+
     }
 }
