@@ -9,5 +9,4 @@ public class Restaurant extends Dapartment {
         super(name, stars);
         this.priceCategory = priceCategory;
     }
-
 }

@@ -5,7 +5,8 @@ package com.heritance;
 
 public class Library {
     public static void main(String[] args) {
-//    Restaurant numberOne = new Restaurant("numberOne" , 5 , "$$");
+
+
 
         // Add Review instance
         Review moviesReview = new Review("This is bad action movies" , "ahmad" , 3);

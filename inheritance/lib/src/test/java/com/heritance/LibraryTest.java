@@ -32,4 +32,5 @@ public class LibraryTest {
         assertEquals(3, theater.getStars());
     }
 
+
 }
