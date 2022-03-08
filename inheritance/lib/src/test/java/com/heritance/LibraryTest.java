@@ -10,18 +10,26 @@ public class LibraryTest {
 
 
     @Test
-    public void reviewTest(){
-        Restaurant numberOne = new Restaurant("numberOne" , 5 , "$$");
-        Review review1 = new Review("This is good resturant" , "hamzh" , 4);
-        Review review2 = new Review("This is bad resturant" , "ahmad" , 1);
-        Review review3 = new Review("This is good resturant" , "mohammed" , 1);
-        numberOne.addReview(review1);
-        numberOne.addReview(review2);
-        numberOne.addReview(review3);
-
-        assertEquals(2, numberOne.getStars());
-
+    public void restReviewTest(){
+        Restaurant restaurant = new Restaurant("numberOne" , 5 , "$$");
+        Review review1 = new Review("This is good resturant" , "mohammed" , 1);
+        restaurant.addReview(review1);
+        assertEquals(3, restaurant.getStars());
     }
-
+    @Test
+    public void shopReviewTest(){
+        Review shopReview = new Review("This is a great shop" ,"hamzh" ,  1 );
+        Shop shop = new Shop("ecommerce" , 5 , "$$$" , "This is perfect shop");
+        shop.addReview(shopReview);
+        assertEquals(3, shop.getStars());
+    }
+    @Test
+    public void theterReviewTest(){
+        Review moviesReview = new Review("This is bad action movies" , "ahmad" , 1);
+        moviesReview.setMovieName("Spider-man");
+        Theater theater = new Theater("number1" , 5 );
+        theater.addReview(moviesReview);
+        assertEquals(3, theater.getStars());
+    }
 
 }
