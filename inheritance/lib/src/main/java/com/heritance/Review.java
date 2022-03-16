@@ -11,12 +11,20 @@ public class Review{
 
         this.body = body;
         this.author = author;
-        this.stars = stars;
+        setStars(stars);
     }
 
 
     public String getMovieName() {
         return movieName;
+    }
+
+    public void setStars(int stars) {
+        if (stars>0 && stars <= 5){
+            this.stars = stars;
+        }else {
+            System.out.println("the stars should be greater than zero");
+        }
     }
 
     public void setMovieName(String movieName) {
@@ -30,7 +38,6 @@ public class Review{
 
     @Override
     public String toString() {
-        String out;
         if (movieName.isEmpty()) {
             return "Review{" +
                     "body='" + body + '\'' +
