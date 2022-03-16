@@ -8,17 +8,16 @@ public class Library {
 //    Restaurant numberOne = new Restaurant("numberOne" , 5 , "$$");
 
         // Add Review instance
-        Review moviesReview = new Review("This is bad action movies" , "ahmad" , 3);
-        moviesReview.setMovieName("Spider-man");
+        Review moviesReview = new Review("This is bad action movies" , "ahmad" , 5 );
         Review resurantReview = new Review("This is good resturant" , "mohammed" , 1);
         Review shopReview = new Review("This is a great shop" ,"hamzh" ,  1 );
 
         // Theater instance
-        Theater theater = new Theater("number1" , 5 );
+        Theater theater = new Theater( 5 );
         theater.addMovie("Spider-man");
         theater.addMovie("Batman");
         theater.addMovie("Super-man");
-        theater.addReview(moviesReview);
+        theater.addReview(moviesReview ,"Super-man" );
         System.out.println("Theater ======== > "  + theater);
 
         // Resturant instance
